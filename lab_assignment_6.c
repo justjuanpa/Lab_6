@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int search(int numbers[], int low, int high, int value) 
 {
-	if (low > high) // Base case: value not found
+	if (low > high) // Base case: value not found wsg
         return -1;
 
     int mid = low + (high - low) / 2;
