@@ -6,20 +6,20 @@ int search(int numbers[], int low, int high, int value)
         return -1;
 	}
 
-	if (low == high) { // Case where low is equal to high
-        if (numbers[low] == value) // If value is found at low
+	if (low == high) { 
+        if (numbers[low] == value)
             return low;
         else
-            return -1; // Value not found
+            return -1;
     }
-	
+
     int mid = low + (high - low) / 2;
 
-    if (numbers[mid] == value) // If value is found at mid
+    if (numbers[mid] == value)
         return mid;
-    else if (numbers[mid] < value) // If value is greater, search right half
+    else if (numbers[mid] < value)
         return search(numbers, mid + 1, high, value);
-    else // If value is smaller, search left half
+    else
         return search(numbers, low, mid - 1, value);
 	return -1;
 }
