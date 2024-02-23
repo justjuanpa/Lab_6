@@ -2,9 +2,17 @@
 #include <stdlib.h>
 int search(int numbers[], int low, int high, int value) 
 {
-	if (low > high) // Base case: value not found wsg
+	if (low > high){
         return -1;
+	}
 
+	if (low == high) { // Case where low is equal to high
+        if (numbers[low] == value) // If value is found at low
+            return low;
+        else
+            return -1; // Value not found
+    }
+	
     int mid = low + (high - low) / 2;
 
     if (numbers[mid] == value) // If value is found at mid
